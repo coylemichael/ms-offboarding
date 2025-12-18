@@ -1,57 +1,62 @@
-# Microsoft 365 User Offboarding Script
+<div align="center">
 
-Automate secure employee offboarding from Microsoft 365 / Entra ID.
+# 🔐 Microsoft 365 User Offboarding
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue.svg)](https://docs.microsoft.com/powershell/)
-[![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-Ready-green.svg)](https://www.microsoft.com/microsoft-365)
+**Automate secure employee offboarding from Microsoft 365 / Entra ID**
 
-## What It Does
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![PowerShell 5.1+](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://docs.microsoft.com/powershell/)
+[![Microsoft 365](https://img.shields.io/badge/Microsoft_365-Ready-0078D4.svg)](https://www.microsoft.com/microsoft-365)
 
-| Step | Action |
-|------|--------|
-| 1 | Disable sign-in |
-| 2 | Reset password (random) |
-| 3 | Revoke all sessions |
-| 4 | Remove from all groups |
-| 5 | Convert mailbox to shared |
-| 6 | Set email forwarding |
-| 7 | Configure auto-reply |
-| 8 | Remove licenses |
+</div>
 
-## Quick Start
+---
+
+## ⚡ Quick Start
 
 ```powershell
-# Install required modules
-Install-Module Microsoft.Graph -Scope CurrentUser
-Install-Module ExchangeOnlineManagement -Scope CurrentUser
-
-# Run the script
-.\offboarding.ps1 -UPN "user@company.com" -ManagerEmail "manager@company.com"
+.\offboarding.ps1 -UPN "user@company.com"
 ```
 
-## Documentation
+**That's it.** Modules install automatically. Add `-ManagerEmail "manager@company.com"` to enable email forwarding.
 
-**📖 Full documentation is embedded in the script itself.**
+---
 
-Open [offboarding.ps1](offboarding.ps1) to see:
-- Step-by-step explanations of each operation
-- Security principles and best practices applied
-- Microsoft Learn documentation links
+## 🎯 What It Does
+
+```
+✓ Disable sign-in          ✓ Remove from all groups
+✓ Reset password (random)   ✓ Convert mailbox → shared
+✓ Revoke all sessions       ✓ Set auto-reply & forwarding
+✓ Remove licenses
+```
+
+---
+
+## 📖 Documentation
+
+**Everything is documented in the script itself** — open [`offboarding.ps1`](offboarding.ps1) to see:
+
+- Step-by-step explanations with security principles
+- Microsoft Learn links for each operation
 - Customization options
 
-## Requirements
+---
 
-- PowerShell 5.1+
-- [Microsoft.Graph](https://www.powershellgallery.com/packages/Microsoft.Graph) module
-- [ExchangeOnlineManagement](https://www.powershellgallery.com/packages/ExchangeOnlineManagement) module
-- User.ReadWrite.All and Group.ReadWrite.All Graph permissions
-- Exchange Administrator role (for mailbox operations)
+## 📋 Requirements
 
-## License
+| Requirement | Details |
+|-------------|---------|
+| PowerShell | 5.1+ |
+| Graph Permissions | `User.ReadWrite.All`, `Group.ReadWrite.All` |
+| Exchange Role | Exchange Administrator |
 
-MIT License - see [LICENSE](LICENSE)
+> 💡 Modules (`Microsoft.Graph`, `ExchangeOnlineManagement`) install automatically on first run.
 
-## Author
+---
 
-**Michael Coyle** - [@coylemichael](https://github.com/coylemichael)
+<div align="center">
+
+**[View Script](offboarding.ps1)** · **[MIT License](LICENSE)**
+
+</div>

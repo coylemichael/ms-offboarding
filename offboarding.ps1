@@ -64,6 +64,37 @@ param(
 $ErrorActionPreference = 'Stop'
 #endregion
 
+#region Module Auto-Installation
+# ============================================================================
+# BEST PRACTICE: Ensure required modules are available before execution
+#
+# This section automatically checks for and installs the required PowerShell
+# modules if they are not already present, eliminating manual setup steps.
+# ============================================================================
+$requiredModules = @(
+    @{ Name = 'Microsoft.Graph'; MinVersion = '2.0.0' }
+    @{ Name = 'ExchangeOnlineManagement'; MinVersion = '3.0.0' }
+)
+
+foreach ($module in $requiredModules) {
+    $installed = Get-Module -ListAvailable -Name $module.Name | 
+                 Where-Object { $_.Version -ge [version]$module.MinVersion } |
+                 Select-Object -First 1
+    
+    if (-not $installed) {
+        Write-Host "Installing $($module.Name) module..." -ForegroundColor Yellow
+        try {
+            Install-Module -Name $module.Name -Scope CurrentUser -Force -AllowClobber -ErrorAction Stop
+            Write-Host "  $($module.Name) installed successfully." -ForegroundColor Green
+        }
+        catch {
+            Write-Error "Failed to install $($module.Name). Please install manually: Install-Module $($module.Name) -Scope CurrentUser"
+            exit 1
+        }
+    }
+}
+#endregion
+
 try {
     #region Interactive Input
     # Prompt interactively if parameters were not supplied
