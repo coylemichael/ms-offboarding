@@ -10,8 +10,6 @@
 
 </div>
 
----
-
 ## ⚡ Quick Start
 
 ```powershell
@@ -20,18 +18,14 @@
 
 **That's it.** Modules install automatically. Add `-ManagerEmail "manager@company.com"` to enable email forwarding.
 
----
-
 ## 🎯 What It Does
 
 ```
-✓ Disable sign-in          ✓ Remove from all groups
+✓ Disable sign-in           ✓ Remove from all groups
 ✓ Reset password (random)   ✓ Convert mailbox → shared
 ✓ Revoke all sessions       ✓ Set auto-reply & forwarding
 ✓ Remove licenses
 ```
-
----
 
 ## 📖 Documentation
 
@@ -40,8 +34,6 @@
 - Step-by-step explanations with security principles
 - Microsoft Learn links for each operation
 - Customization options
-
----
 
 ## 📋 Requirements
 
@@ -52,8 +44,6 @@
 | Exchange Role | Exchange Administrator |
 
 > 💡 Modules (`Microsoft.Graph`, `ExchangeOnlineManagement`) install automatically on first run.
-
----
 
 <div align="center">
 
