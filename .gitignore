@@ -1,0 +1,23 @@
+# PowerShell specific
+*.ps1xml
+
+# IDE and editor files
+.vscode/
+*.code-workspace
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# Credentials (never commit these!)
+*.cred
+*credentials*
+*.pfx
+*.cer
