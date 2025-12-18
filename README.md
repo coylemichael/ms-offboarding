@@ -20,6 +20,8 @@
 
 ## 🎯 What It Does
 
+All guidance aligns with **Microsoft Best Practice** — each command includes the relevant defence-in-depth principle and a link to [Microsoft Learn](https://learn.microsoft.com) for further reading.
+
 ```
 ✓ Disable sign-in           ✓ Remove from all groups
 ✓ Reset password (random)   ✓ Convert mailbox → shared

@@ -34,7 +34,7 @@
     GitHub:         https://github.com/coylemichael/ms-offboarding
     License:        MIT License
     Version:        1.0.0
-    Last Updated:   December 2024
+    Last Updated:   December 2025
     
     Prerequisites:
     - Microsoft.Graph PowerShell module
